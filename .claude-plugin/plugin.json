@@ -1,0 +1,21 @@
+{
+  "name": "ysk-throttle",
+  "version": "1.0.0",
+  "description": "Cuts the cost of Claude Code's built-in 'You should know' side agent by letting its routine checks through only every N tool calls, and never on an expired cache",
+  "author": { "name": "declanbx" },
+  "license": "MIT",
+  "userConfig": {
+    "minToolCalls": {
+      "type": "number",
+      "title": "Tool calls between checks",
+      "description": "Main-conversation tool calls that must run before the next routine check is let through (the plugin's own cadence is every 6 model calls).",
+      "default": 24
+    },
+    "staleMinutes": {
+      "type": "number",
+      "title": "Skip checks after an idle gap (minutes)",
+      "description": "Skip a check when the step before it came more than this long after the previous one: the conversation's prompt cache has likely expired, and the check would pay the whole conversation at full price. Claude subscriptions typically write 1-hour cache entries; API keys default to 5 minutes, so set 4 there.",
+      "default": 55
+    }
+  }
+}

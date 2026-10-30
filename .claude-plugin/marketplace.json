@@ -1,0 +1,13 @@
+{
+  "name": "ysk-throttle",
+  "description": "ysk-throttle: a Claude Code mod that throttles the built-in 'You should know' side agent",
+  "owner": {
+    "name": "declanbx"
+  },
+  "plugins": [
+    {
+      "name": "ysk-throttle",
+      "source": "./"
+    }
+  ]
+}
